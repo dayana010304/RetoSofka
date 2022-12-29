@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1d436d;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.container{
+    width: 1800px;
+    background: white;
+    border-radius: 7px;
+    padding: 30px 35px 0 35px;
+   
+}
+
+.container header{
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    text-align:center;
+}
+
+.container .form-princ{
+    width: 100%;
+    overflow: hidden;
+    
+}
+.form-princ form{
+    display: flex;
+    width: 400%;
+}
+
+.form-princ form .pagina{
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.form-princ form .pagina .titulo{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.form-princ form .pagina .campo{
+    height: 35px;
+    width: 320px;
+    margin: 40px 0;
+    display: flex;
+    position: relative;
+}
+
+.form-princ form .pagina .campo button{
+    width: 100%;
+    height: calc(100% + 5px);
+    margin-top: -20px;
+    border: none;
+    background: #f58c3a;
+    border-radius: 7px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+    justify-content: flex-end;
+}
+
+.form-princ form .pagina .campo button:hover{
+    background: #1d436d;
+}
+
+.form-princ form .pagina .btns button{
+    margin-top: 20px!important;
+}
