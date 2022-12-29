@@ -14,8 +14,6 @@ class Nave1 extends Nave{
         $this->setPais($pais);
     }
 
-
-
 }
 
 

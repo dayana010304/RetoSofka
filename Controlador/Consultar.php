@@ -1,5 +1,7 @@
 <?php
-class Consultar{
+require './Modelo/Conexion/Conexion.php';
+
+class Consultar extends Conexion{
   public function consultarDatos($consultaSQL){
 
     $conexionBD=$this->conectarBD();
@@ -15,4 +17,7 @@ class Consultar{
   }
 }
 
+$transaccion= new Consultar();
+$consultaSQL="SELECT * FROM vehiculos";
+$vehiculo=$transaccion->consultarDatos($consultaSQL);
 ?>

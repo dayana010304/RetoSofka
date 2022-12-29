@@ -41,6 +41,9 @@
                             <input type="text" class="form-control" type="text" id="" name="" value="">
                         </div>
                         <div class="campo btns">
+                            <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="">Regresar</button>
+                        </div>
+                        <div class="campo btns">
                             <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="javascript:enviar_formulario()">Guardar</button>
                         </div>
                     </div>

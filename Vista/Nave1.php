@@ -44,7 +44,7 @@
                             <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="">Regresar</button>
                         </div>
                         <div class="campo btns">
-                            <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="javascript:enviar_formulario()">Regresar</button>
+                            <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="javascript:enviar_formulario()">Guardar</button>
                         </div>
                     </div>
                 </div>

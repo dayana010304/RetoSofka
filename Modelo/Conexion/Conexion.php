@@ -1,6 +1,7 @@
 <?php
 
 class Conexion
+/*
 {
     protected $conexionBD;
 
@@ -15,6 +16,25 @@ class Conexion
             return $this->conexionBD;
         }catch(Exception $e){
             echo($e->getMessage());
+        }
+    }
+}
+*/
+{
+    public $navesBD="root";
+    public $passwordBD="";
+
+    public function __construct(){}
+
+    public function conectarBD()
+    {
+        try
+        {
+            $infoDB="mysql:host=localhost;dbname=naves";
+            $conexionBD=new PDO($infoDB, $this->navesBD,$this->passwordBD);
+            return($conexionBD);
+        }catch(PDOException $error){
+            echo($error->getMessage());
         }
     }
 }
