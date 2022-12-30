@@ -61,7 +61,7 @@ body{
     position: relative;
 }
 
-.form-princ form .pagina .campo button{
+.form-princ form .pagina .campo input{
     width: 100%;
     height: calc(100% + 5px);
     margin-top: -20px;
@@ -78,11 +78,11 @@ body{
     justify-content: flex-end;
 }
 
-.form-princ form .pagina .campo button:hover{
+.form-princ form .pagina .campo input:hover{
     background: #1d436d;
 }
 
-.form-princ form .pagina .btns button{
+.form-princ form .pagina .btns input{
     margin-top: 20px!important;
 }
 h2{

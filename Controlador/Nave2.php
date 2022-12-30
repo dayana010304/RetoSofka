@@ -1,5 +1,6 @@
 <?php
 require '../Modelo/Nave.php';
+require 'GuardarNave.php';
 
 class Nave2 extends Nave{
 
@@ -14,8 +15,29 @@ class Nave2 extends Nave{
         $this->setPais($pais);
     }
 
-    
+    public function getOrigen(){
+        return $this->velocidad;
+    }
 
+    public function setVelocidad($velocidad){
+        $this->velocidad = $velocidad;
+    }
+}
+if (isset($_POST["guardar"]))
+{
+    $nombre = $_POST["nombre"];
+    $altura=$_POST["altura"];
+    $peso=$_POST["peso"];
+    $combustible = $_POST ["combustible"];
+    $pais= $_POST["pais"];
+    $velocidad= $_POST["velocidad"];
+    $atributo = "Velocidad";
+    $code = rand(10000, 99999);
+    $transaccion = new GuardarNave();
+    $consultaSQL="INSERT INTO vehiculos (nombre, altura, peso, combustible, pais, idRelacionVehiculo) VALUES ('$nombre', '$altura', '$peso', '$combustible', '$pais', '$code')";
+    $consultaSQL2="INSERT INTO naves (idRelacional, tipoAtributo, atributo) VALUES ('$code' ,'$atributo', '$velocidad')";
+    $transaccion->agregarDatos($consultaSQL);  
+    $transaccion->agregarDatos($consultaSQL2);  
 }
 
 

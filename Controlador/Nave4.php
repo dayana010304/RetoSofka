@@ -1,21 +1,42 @@
 <?php
 require '../Modelo/Nave.php';
+require 'GuardarNave.php';
 
 class Nave4 extends Nave{
 
-    private $tipoVehiculo;
+    private $destino;
 
-    public function __construct ($nombre, $altura, $peso, $combustible, $pais, $tipoVehiculo){
-        $this->tipoVehiculo = $tipoVehiculo;
+    public function __construct ($nombre, $altura, $peso, $combustible, $pais, $destino){
+        $this->destino = $destino;
         $this->setNombre($nombre);
         $this->setAltura($altura);
         $this->setPeso($peso);
         $this->setCombustible($combustible);
         $this->setPais($pais);
     }
+    public function getDestino(){
+        return $this->destino;
+    }
 
-    
-
+    public function setDestino($destino){
+        $this->destino = $destino;
+    }
+}
+if (isset($_POST["guardar"]))
+{
+    $nombre = $_POST["nombre"];
+    $altura=$_POST["altura"];
+    $peso=$_POST["peso"];
+    $combustible = $_POST ["combustible"];
+    $pais= $_POST["pais"];
+    $destino= $_POST["destino"];
+    $atributo = "Destino";
+    $code = rand(10000, 99999);
+    $transaccion = new GuardarNave();
+    $consultaSQL="INSERT INTO vehiculos (nombre, altura, peso, combustible, pais, idRelacionVehiculo) VALUES ('$nombre', '$altura', '$peso', '$combustible', '$pais', '$code')";
+    $consultaSQL2="INSERT INTO naves (idRelacional, tipoAtributo, atributo) VALUES ('$code' ,'$atributo', '$destino')";
+    $transaccion->agregarDatos($consultaSQL);  
+    $transaccion->agregarDatos($consultaSQL2);  
 }
 
 

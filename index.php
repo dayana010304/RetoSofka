@@ -1,5 +1,5 @@
 <?php
-    require 'Controlador/Consultar.php';
+    require 'Modelo/Conexion/Conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +22,9 @@
         <a type="button" class="btn btn-danger" href="Vista/Nave4.php">Nave 4</a>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <form action="<?=$_SERVER['PHP_SELF']?>" method="POST" class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search" name="nombre"required>
+                    <button class="btn btn-outline-success" name="buscar" id="buscar" type="submit">Buscar</button>
                 </form>
             </div>
         </nav>
@@ -39,15 +39,41 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($vehiculo as $vehiculo){?>
-                <tr>
-                    <td><?php echo($vehiculo["nombre"]);?></td>
-                    <td><?php echo($vehiculo["altura"]);?></td>
-                    <td><?php echo($vehiculo["peso"]);?></td>
-                    <td><?php echo($vehiculo["combustible"]);?></td>
-                    <td><?php echo($vehiculo["pais"]);?></td>
-                </tr>
-                <?php }?>
+                <?php
+                    if(isset($_POST['buscar'])){
+                        $nombre = $_POST['nombre'];
+                        if (!empty($_POST['nombre'])){
+                            $consultaSQL="SELECT * FROM vehiculos WHERE nombre like '%".$nombre."%'";
+                        }
+                        $conexionBD=conectarBD();
+                        $resultado = $conexionBD->query($consultaSQL);
+                        while($filas=$resultado->fetch()){
+                            ?>
+                            <tr>
+                                <td><?php echo($filas["nombre"]);?></td>
+                                <td><?php echo($filas["altura"]);?></td>
+                                <td><?php echo($filas["peso"]);?></td>
+                                <td><?php echo($filas["combustible"]);?></td>
+                                <td><?php echo($filas["pais"]);?></td>
+                            </tr>
+                    <?php
+                   } }else{
+                        $conexionBD=conectarBD();
+                        $consultaSQL = "SELECT * FROM vehiculos";
+                        $resultado = $conexionBD->query($consultaSQL);
+                        while($filas=$resultado->fetch()){
+                            ?>
+                            <tr>
+                                <td><?php echo($filas["nombre"]);?></td>
+                                <td><?php echo($filas["altura"]);?></td>
+                                <td><?php echo($filas["peso"]);?></td>
+                                <td><?php echo($filas["combustible"]);?></td>
+                                <td><?php echo($filas["pais"]);?></td>
+                            </tr>
+                       <?php
+                        }
+                    }
+                       ?> 
             </tbody>
         </table>
     </div>

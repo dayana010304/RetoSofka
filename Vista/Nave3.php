@@ -11,40 +11,40 @@
 <body>
     <div class="container">
         <div class="form-princ">
-            <form action="" method="POST">
+            <form action="../Controlador/Nave3.php" method="POST">
                 <div class="pagina">
                     <div class="titulo">Crear nave 3</div>
                     <br>
                     <div class="row">
                         <div class="col-6">
                             <div class="label">Nombre</div>
-                            <input type="text" class="form-control" type="text" id="" name=""  value="">
+                            <input type="text" class="form-control" type="text" id="nombre" name="nombre" required>
                         </div>
                         <div class="col-6">
                             <div class="label">Altura</div>
-                            <input type="text" class="form-control" type="text" id="" name="" value="">
+                            <input type="text" class="form-control" type="text" id="altura" name="altura" required>
                         </div>
                         <div class="col-6">
                             <div class="label">Peso</div>
-                            <input type="text" class="form-control" type="text" id="" name="" value="">
+                            <input type="text" class="form-control" type="text" id="peso" name="peso" required>
                         </div>
                         <div class="col-6">
                             <div class="label">Combustible</div>
-                            <input type="text" class="form-control" type="text" id="" name="" value="">
+                            <input type="text" class="form-control" type="text" id="combustible" name="combustible" required>
                         </div>
                         <div class="col-6">
                             <div class="label">Pais</div>
-                            <input type="text" class="form-control" type="text" id="" name="" value="">
+                            <input type="text" class="form-control" type="text" id="pais" name="pais" required>
                         </div>
                         <div class="col-6">
                             <div class="label">Capacidad</div>
-                            <input type="text" class="form-control" type="text" id="" name="" value="">
+                            <input type="text" class="form-control" type="text" id="capacidad" name="capacidad" required>
                         </div>
                         <div class="campo btns">
-                            <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="">Regresar</button>
+                            <input type="button" onclick="history.back()" name="volver atrás" value="Regresar">
                         </div>
                         <div class="campo btns">
-                            <button class="adelante-pag3" id="Aceptar" name="Aceptar" href="javascript:enviar_formulario()">Guardar</button>
+                            <input type="submit" id="Aceptar" name="guardar" value="Guardar">
                         </div>
                     </div>
                 </div>

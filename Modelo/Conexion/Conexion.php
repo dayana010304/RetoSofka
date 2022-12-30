@@ -1,41 +1,21 @@
 <?php
 
-class Conexion
-/*
-{
-    protected $conexionBD;
-
-    public function __construct()
+function conectarBD()
     {
+        $conexion = null;
+        $host = '127.0.0.1';
+        $bd = 'sofka';
+        $user = 'root';
+        $pwd = '';
         try
         {
-            $this->conexionBD = new PDO('mysql:host=localhost;dbname=naves','root','');
-            $this->conexionBD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->conexionBD->exec('SET CHARACTER SET utf8');
-            echo 'Conexion establecida';
-            return $this->conexionBD;
-        }catch(Exception $e){
-            echo($e->getMessage());
-        }
-    }
-}
-*/
-{
-    public $navesBD="root";
-    public $passwordBD="";
-
-    public function __construct(){}
-
-    public function conectarBD()
-    {
-        try
-        {
-            $infoDB="mysql:host=localhost;dbname=naves";
-            $conexionBD=new PDO($infoDB, $this->navesBD,$this->passwordBD);
+            $conexionBD=new PDO('mysql:host='.$host.';dbname='.$bd, $user, $pwd);
             return($conexionBD);
         }catch(PDOException $error){
-            echo($error->getMessage());
+            echo 'No se puede conectar a la base de datos';
+            exit;
         }
+        return $conexion;
     }
-}
+
 ?>

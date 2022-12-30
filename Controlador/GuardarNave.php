@@ -1,18 +1,29 @@
 <?php
 
 require '../Modelo/Conexion/Conexion.php';
+require '../Estilos/script.php';
 
-class GuardarNave {
-
+class GuardarNave{
     public function agregarDatos($consultaSQL){
-        $conexionBD=$this->conectarBD();
+        $conexionBD=conectarBD();
  
         $consultaInsertarDatos= $conexionBD->prepare($consultaSQL);
 
         $resultado=$consultaInsertarDatos->execute();
 
-        if ($resultado){
-            echo("Registro agregado con exito");
+        if ($resultado === true){
+            echo  '<script>
+                        swal({
+                        icon: "success",
+                        title: "Felicidades",
+                        text: "Registro guardado correctamente",
+                        type: "success",
+                        timer: 3000,
+                        showConfirmButton: false
+                        }).then(function(){
+                            window.location = "../index.php";
+                        });
+                    </script>'; 
         }else{
             echo("Error agregando el registro");
         }
