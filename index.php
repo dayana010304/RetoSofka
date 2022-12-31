@@ -56,8 +56,9 @@
                                 <td><?php echo($filas["combustible"]);?></td>
                                 <td><?php echo($filas["pais"]);?></td>
                             </tr>
-                    <?php
-                   } }else{
+                            <?php
+                        }
+                    }else{
                         $conexionBD=conectarBD();
                         $consultaSQL = "SELECT * FROM vehiculos";
                         $resultado = $conexionBD->query($consultaSQL);
@@ -73,7 +74,7 @@
                        <?php
                         }
                     }
-                       ?> 
+                    ?> 
             </tbody>
         </table>
     </div>

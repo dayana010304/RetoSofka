@@ -4,6 +4,7 @@ require '../Modelo/Conexion/Conexion.php';
 require '../Estilos/script.php';
 
 class GuardarNave{
+    //Creamos funcion para guardar los datos en la base de datos, usamos la conexion que creamos en el modelo
     public function agregarDatos($consultaSQL){
         $conexionBD=conectarBD();
  
@@ -12,6 +13,7 @@ class GuardarNave{
         $resultado=$consultaInsertarDatos->execute();
 
         if ($resultado === true){
+            // Si los datos se guardar correctamente, se habilita un alert
             echo  '<script>
                         swal({
                         icon: "success",

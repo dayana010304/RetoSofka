@@ -2,6 +2,7 @@
 require '../Modelo/Nave.php';
 require 'GuardarNave.php';
 
+//Creamos la clase para la nave3 y agregamos un atributo unico (capacidad)
 class Nave3 extends Nave{
 
     private $capacidad;
@@ -22,6 +23,7 @@ class Nave3 extends Nave{
         $this->capacidad = $capacidad;
     }
 }
+//Creamos la consulta para guardar los datos de la nave3 y usamos la funcion de GuardarNave
 if (isset($_POST["guardar"]))
 {
     $nombre = $_POST["nombre"];

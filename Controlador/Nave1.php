@@ -2,6 +2,7 @@
 require '../Modelo/Nave.php';
 require 'GuardarNave.php';
 
+//Creamos la clase para la nave1 y agregamos un atributo unico (origen)
 class Nave1 extends Nave{
 
     private $origen;
@@ -24,6 +25,7 @@ class Nave1 extends Nave{
 
 }
 
+//Creamos la consulta para guardar los datos de la nave1 y usamos la funcion de GuardarNave
 if (isset($_POST["guardar"]))
 {
     $nombre = $_POST["nombre"];

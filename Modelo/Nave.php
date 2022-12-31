@@ -1,5 +1,6 @@
 <?php
 
+//Clase principal con cada una de las caracteristicas de las naves
 class Nave {
 
     private $nombre;
